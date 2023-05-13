@@ -7,7 +7,7 @@ import ru.netology.movie.poster.MoviePoster;
 public class MovieManagerTest {
     MoviePoster first = new MoviePoster(1, "Бладшот", "боевик");
     MoviePoster second = new MoviePoster(2, "Вперед", "мультфильм");
-    MoviePoster third = new MoviePoster(3, "Отель /Белград/'", "комедия");
+    MoviePoster third = new MoviePoster(3, "Отель Белград", "комедия");
     MoviePoster fourth = new MoviePoster(4, "Джентельмены", "боевик");
     MoviePoster fifth = new MoviePoster(5, "Человек-невидимка", "ужасы");
     MoviePoster sixth = new MoviePoster(6, "Тролли", "мультфильм");
