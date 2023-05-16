@@ -91,4 +91,61 @@ public class MovieManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindMovieAboveLimit() {
+        MovieManager manager = new MovieManager(11);
+
+        manager.addNewMovie(first);
+        manager.addNewMovie(second);
+        manager.addNewMovie(third);
+        manager.addNewMovie(fourth);
+        manager.addNewMovie(fifth);
+        manager.addNewMovie(sixth);
+        manager.addNewMovie(seventh);
+        manager.addNewMovie(eighth);
+        manager.addNewMovie(ninth);
+        manager.addNewMovie(tenth);
+
+        MoviePoster[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+        MoviePoster[] actual = manager.getFindLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindMovieBelowLimit() {
+        MovieManager manager = new MovieManager(2);
+
+        manager.addNewMovie(first);
+        manager.addNewMovie(second);
+
+        MoviePoster[] expected = {second, first};
+        MoviePoster[] actual = manager.getFindLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindMovieEqualLimit() {
+        MovieManager manager = new MovieManager(10);
+
+        manager.addNewMovie(first);
+        manager.addNewMovie(second);
+        manager.addNewMovie(third);
+        manager.addNewMovie(fourth);
+        manager.addNewMovie(fifth);
+        manager.addNewMovie(sixth);
+        manager.addNewMovie(seventh);
+        manager.addNewMovie(eighth);
+        manager.addNewMovie(ninth);
+        manager.addNewMovie(tenth);
+
+        MoviePoster[] expected = {tenth, ninth, eighth, seventh, sixth, fifth, fourth, third, second, first};
+        MoviePoster[] actual = manager.getFindLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+
 }
